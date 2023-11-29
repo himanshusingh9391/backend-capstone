@@ -1,0 +1,57 @@
+.hori-line{
+    border-left: 3px solid black;
+    height: 800px;
+    position:absolute;
+    left: 30%;
+    top: 10%;
+    
+  }
+
+  p{
+    margin-left: 4rem;
+    margin-top: 3rem;
+    font-size: larger;
+  }
+
+  .sell-homecol-2{
+    margin-top: 6rem;
+    margin-left: -6rem;   
+  }
+
+  h3{
+    margin-left: -4rem;
+    margin-top: -2rem;
+  }
+ 
+  .sell-but{
+    float: right;
+    margin-top: -2.2rem;
+    margin-right: -10rem;
+  }
+
+.sellerdata-data{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  width: 100vh;
+}
+
+.sellerimg-card{
+  width: 200px;
+  height: 260px;
+  margin-left: -4rem;
+  margin-top: 2rem;
+  margin: 1rem;
+}
+  .sellerdata-img{
+   height: 100px;
+   width: 150px;
+   margin-left: 1rem;
+  }
+  .sellercard-but{
+    margin:10px;
+    margin-left: 0.5rem;
+  }
+
+  .sellercard-discount{
+    color: rgb(250, 51, 11);
+  }

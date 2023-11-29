@@ -1,0 +1,37 @@
+
+.sell-homemain{
+    background-color: rgb(255, 81, 0);
+    height: 100vh;
+}
+
+.add-pro{
+    margin-top: -4rem;
+}
+
+.inp-seller{
+   margin-top: 4rem;
+   margin-left: 2rem;
+}
+
+.sellhome-hr{
+    border-left: 3px solid black;
+    height: 550px;
+    position:absolute;
+    left: 45%;
+    top: 10%;
+
+}
+
+
+.col2-sellhome{
+    margin-left: 4rem !important;
+}
+
+.col2-sellhome{
+    margin-top: 4rem;
+    margin-left: -5rem;
+}
+.right-sellhomecol{
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+}

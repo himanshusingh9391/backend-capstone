@@ -1,0 +1,65 @@
+
+.back{
+    background-color: rgb(198, 177, 197);
+    margin-top: -4rem;
+    height: 170vh;
+}
+
+.button{
+    width: 7vw;
+    border-radius: 8%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+  
+.single{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-left: 3rem;
+    margin-top: -1rem;
+  }
+  
+  .img{
+    height: 10vh;
+    width: 10vw;
+  }
+
+  .search-product-box{
+   text-align: center;
+   margin-bottom: 1rem;
+   margin-top: 1.5rem;
+  }
+
+  .search{
+  width: 280px;
+  margin: 10px;
+  height: 8px;
+  border: 1px solid skyblue;
+  padding: 10px ;
+
+  }
+
+  
+
+  .sellerdata-datas{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    width: 100vh;
+  }
+  
+  
+  .sellerimg-card{
+    width: 200px;
+    height: 260px;
+    margin-left: -4rem;
+    margin-top: 2rem;
+    margin: 1rem;
+  }
+    .sellerdata-img{
+     height: 100px;
+     width: 150px;
+    }
+    .sellercard-but{
+      margin:10px;
+      margin-left: 0.5rem;
+    }

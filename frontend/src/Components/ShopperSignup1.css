@@ -1,0 +1,46 @@
+
+.reg-seller{
+    height: 100vh;
+    background-color: cadetblue;
+}
+
+.signup-reg{
+    height: 50vh;
+    width: 65vh;
+    background-color: darkgray;
+    margin-top: 9rem;
+}
+
+.inputBox1{
+    display: block;
+    border-radius: 10%;
+    margin: 30px;
+    margin-top: 1rem;
+    padding:2px;
+    width: 250px;
+    border: 1.2px solid skyblue;
+    background-color: 1px solid skyblue;
+  }
+
+  .appButton{
+    margin: 25px;
+    padding: 5px;
+    width: 120px;
+    background-color: skyblue;
+    border: 1px solid ;
+    cursor: pointer;
+    margin-top: -2rem;
+  }
+
+  h4{
+    margin-left: 1rem;
+    font-size: medium;
+    width: 55vh !important;
+  }
+
+  h5{
+    font-size: medium;
+    margin-left: 1rem;
+  }
+
+ 

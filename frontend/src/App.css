@@ -1,0 +1,125 @@
+
+.inputBox{
+  display: block;
+  border-radius: 10%;
+  margin: 25px;
+  padding:2px;
+  width: 250px;
+  border: 1.2px solid skyblue;
+  background-color: 1px solid skyblue;
+}
+
+
+.appButton{
+  margin: 25px;
+  padding: 5px;
+  width: 120px;
+  background-color: skyblue;
+  border: 1px solid ;
+  cursor: pointer;
+  margin-top: -2rem;
+}
+
+
+.nav-right{
+  text-align: right;
+}
+
+.nav-top{
+  background-color:skyblue;
+  width: 100%;
+  height: 70px;
+  margin-top: 4rem;
+}
+
+
+h1{
+  margin-top: -3rem !important;
+  text-align:left;
+  margin-left: 5rem;
+  font-size: small;
+}
+
+.logo{
+  height: 45px;
+  margin-top:1rem;
+  margin-left: 1rem;
+}
+
+
+.nav-link{
+  margin-top: -1.5rem;
+  float: right;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.comp{
+  float: right;
+}
+.comp img{
+  height: 2rem;
+  margin-top: -4rem;
+  margin-right: 1rem;
+}
+li{
+  font-size: large;
+  margin-top: -0.5rem;
+}
+/* 
+.Register{
+  margin-left: 36%;
+  margin-top: 0.1rem;
+} */
+
+/* .Register1{
+  margin-left: 15%;
+  margin-top: -2rem;
+} */
+
+/* .bag{
+  margin-top: 2rem;
+  margin-left: -4rem;
+}
+.bag1{
+  margin-top: 5.2rem;
+  margin-left: 7rem;
+} */
+
+.shopNav{
+  margin-top: 4rem;
+  margin-left: 3rem;
+}
+
+.sellNav{
+  margin-top: 2.1rem ;
+}
+
+.primary {
+  margin-left: 10rem;
+  margin-top: 3rem;
+}
+
+.primary2{
+  margin-top: -4rem;
+  margin-left: 12rem;
+}
+
+.twobag{
+  background-color: cadetblue;
+  width: 100%;
+  height: 99vh;
+}
+
+.Registers{
+  margin-top: 10%;
+}
+
+span{
+  color: white;
+}
+
+
+
