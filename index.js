@@ -11,7 +11,7 @@ const jwtKey = 'cap';
 const multer = require('multer')
 const fs = require("fs");
 const app = express();
-const PORT  = process.env.PORT || 2000;
+
 
 const bodyParser = require("body-parser");
 const { default: mongoose } = require('mongoose');
@@ -162,6 +162,4 @@ function verifyToken(req,res,next){
 }
  
 
-// app.listen(2000)
-app.listen(PORT, ()=>{
-  console.log(`server started ${PORT}`)
+ app.listen(2000)
