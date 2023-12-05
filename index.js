@@ -1,5 +1,5 @@
 const express = require('express');
-require('./DB/Config');
+// require('./DB/Config');
 const cors = require("cors");
 const User = require('./DB/User');
 const Products = require('./DB/Products'); // for shopper products
@@ -8,15 +8,27 @@ const Jwt = require('jsonwebtoken');
 const jwtKey = 'cap';
 
 
-const multer = require('multer')
-const fs = require("fs");
+// const multer = require('multer')
+// const fs = require("fs");
 const app = express();
-const PORT = process.env.PORT || 2000;
+// const PORT = process.env.PORT || 2000;
 
-const bodyParser = require("body-parser");
-const { default: mongoose } = require('mongoose');
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+const mongoose = require('mongoose');
+const uri = 'mongodb+srv://himanshusingh9030:singh123@cluster0.umtnblw.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(uri);
+
+const db = mongoose.connection;
+db.on('error',console.error.bind(console,'MongoDB connection error'));
+db.once('open',()=>{
+  console.log('successfully connected to db');
+})
+
+
+
+// const bodyParser = require("body-parser");
+// const { default: mongoose } = require('mongoose');
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
 app.use(express.json());
 app.use(cors());
@@ -48,44 +60,6 @@ app.post('/login',async(req,res)=>{
     }}
 })
 
-// used to oinsert image in db
-
-// const Storage  = multer.diskStorage({
-//   destination: "Uploads",
-//   filename: (req, file, cb) => {
-//     cb(null, file.originalname);
-//   },
-// })
-
-// const upload = multer({
-//   storage:Storage
-// }).single('testImage')
-
-// app.post('/upload',(req,res)=>{
-//   upload(req,res,(err)=>{
-//       if(err){
-//           console.log('err')
-//       }
-//       else{
-//           const result  = new Products({
-//               image:{
-//                   data:req.file.filename,
-//                   contentType:'image/png'
-//               },
-//               name:req.body.name,
-//               price:req.body.price
-//           })
-//           result.save()
-//           .then(()=>res.send('success'))
-//           .catch((err)=>console.log('err'))
-//       }
-//   })
-// })
-
-// app.get('/upload',async(req,res)=>{
-//   let data = await Products.find()
-//   res.send(data)
-// })
 
 app.get('/search/:key',verifyToken, async (req,res)=>{
   let result = await AddSellerProduct.find(
@@ -161,8 +135,8 @@ function verifyToken(req,res,next){
  
 }
  
-app.listen(PORT,()=>{
-  console.log(`server started ${PORT}`);
-})
 
-// app.listen(2000)
+
+app.listen(2000)
+
+
