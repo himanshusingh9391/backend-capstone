@@ -26,7 +26,7 @@ function SellerAddProduct() {
 
 
     function uploadImage(){
-      fetch("http://localhost:2000/uploadseller-image",{
+      fetch("https://shopsy-ikxy.onrender.com/uploadseller-image",{
         method: 'post',
         crossDomain: true,
         headers : {

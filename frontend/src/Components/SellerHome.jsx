@@ -17,7 +17,7 @@ useEffect(()=>{
 },[])
 
 function getData(){
-    fetch("http://localhost:2000/get-image",{
+    fetch("https://shopsy-ikxy.onrender.com/get-image",{
         method: "get",
         headers:{
             "Content-Type" : "application/json",
@@ -31,7 +31,7 @@ function getData(){
 }
 
 const deleteProduct = async (id) =>{
-    let result = await fetch(`http://localhost:2000/product/${id}`,{
+    let result = await fetch(`https://shopsy-ikxy.onrender.com/product/${id}`,{
         method: 'Delete',
         headers:{
             "Content-Type" : "application/json",

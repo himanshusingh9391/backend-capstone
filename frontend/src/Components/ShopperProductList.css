@@ -33,13 +33,15 @@
   .search{
   width: 280px;
   margin: 10px;
-  height: 8px;
   border: 1px solid skyblue;
+  border-radius: 25%;
   padding: 10px ;
-
   }
 
-  
+  .B1{
+    border-radius: 25%;
+    height: 40px;
+  }
 
   .sellerdata-datas{
     display: grid;

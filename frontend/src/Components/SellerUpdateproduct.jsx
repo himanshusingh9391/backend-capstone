@@ -19,7 +19,7 @@ function SellerUpdateproduct() {
     },[])
 
     const getProductDetails = async ()=>{
-        let result = await fetch(`http://localhost:2000/product/${params.id}`,{
+        let result = await fetch(`https://shopsy-ikxy.onrender.com/product/${params.id}`,{
           headers:{
             "Content-Type" : "application/json",
             authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
@@ -35,7 +35,7 @@ function SellerUpdateproduct() {
     }
 
     const updateProduct = async ()=>{
-        let result = await fetch(`http://localhost:2000/product/${params.id}`,{
+        let result = await fetch(`https://shopsy-ikxy.onrender.com/product/${params.id}`,{
             method : 'Put',
             body : JSON.stringify({title,description,price,discount,image}),
             headers : {
@@ -63,7 +63,7 @@ function SellerUpdateproduct() {
 
 
     function uploadImage(){
-      fetch("http://localhost:2000/uploadseller-image",{
+      fetch("https://shopsy-ikxy.onrender.com/uploadseller-image",{
         method: 'post',
         crossDomain: true,
         headers : {

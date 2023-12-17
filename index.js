@@ -24,12 +24,6 @@ db.once('open',()=>{
 })
 
 
-
-// const bodyParser = require("body-parser");
-// const { default: mongoose } = require('mongoose');
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-
 app.use(express.json());
 app.use(cors());
 
@@ -57,6 +51,7 @@ app.post('/login',async(req,res)=>{
             }
             res.send({user, auth: token})
         })
+
     }}
 })
 

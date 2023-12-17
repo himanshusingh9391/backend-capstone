@@ -18,8 +18,47 @@ function Login() {
     },[])
 
     const handleLogin= async ()=>{
- 
-        let result = await fetch('http://localhost:2000/login',{
+        if(email.length==0){
+            alert('Enter email')
+            return
+        }
+        if(password.length<5){
+            Alert('Enter atleast five length password')
+            return
+        }
+        let countUpppercase=0;
+        let countlowecase = 0;
+        let specialCharacters = 0;
+
+        for(let i=0;i<password.length;i++){
+            let specialChars = ['!','@','#','$','%','^','&','*','(',')','<','>',',','.','/']
+            if(specialChars.includes(password[i])){
+                specialCharacters++
+            }
+            else{
+                if(password[i]== password[i].toUpperCase()){
+                    countUpppercase++
+                }
+                if(password[i]== password[i].toLowerCase()){
+                    countlowecase++
+                }
+            }
+        }
+
+        if(countUpppercase==0){
+            alert('Invalid Form, 0 upper case characters in password')
+            return
+        }
+        if(countlowecase==0){
+            alert('Invalid Form, 0 lower case characters in password')
+            return
+        }
+        if(specialCharacters==0){
+            alert('Invalid Form, 0 special characters case characters in password')
+            return
+        }
+        
+        let result = await fetch('https://shopsy-ikxy.onrender.com/login',{
             method:'post',
             body:JSON.stringify({email,password}),
             headers:{

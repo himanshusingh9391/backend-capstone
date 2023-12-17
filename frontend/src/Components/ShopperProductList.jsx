@@ -18,7 +18,7 @@ function ProductList({cartItems,handleAddToCart}) {
   },[])
 
   function getData(){
-    fetch("http://localhost:2000/get-image",{
+    fetch("https://shopsy-ikxy.onrender.com/get-image",{
         method: "get",
         headers:{
           "Content-Type" : "application/json",
@@ -49,7 +49,7 @@ function ProductList({cartItems,handleAddToCart}) {
   const handleSearch = async (event) =>{
     let key  = event.target.value;
     if(key){
-    let result = await fetch(`http://localhost:2000/search/${key}`,{
+    let result = await fetch(` https://shopsy-ikxy.onrender.com/search/${key}`,{
       headers : {
         authorization : `bearer ${JSON.parse(localStorage.getItem('token'))}`
       }
@@ -67,10 +67,10 @@ function ProductList({cartItems,handleAddToCart}) {
     <>
     <div className='back'>
       <Nav/>
-      {/* <h1>Product List</h1> */}
+      
       <div className='search-product-box'>
         <input type='text' onChange={handleSearch} placeholder='Search Product' className='search' />
-        <button onClick={()=>navigate('/shopcart')}>GOTO Cart</button>
+        <button onClick={()=>navigate('/shopcart')} className='B1'>GOTO Cart</button>
         </div>
       
       <div className='single'>
@@ -104,36 +104,7 @@ function ProductList({cartItems,handleAddToCart}) {
                         )
                     })}
                     </div>
-        {/* {
-          data.map((single)=>{
-            const base64String = btoa(String.fromCharCode(...new Uint8Array(single.image.data.data)));
-            return (
-              <div key={single._id} style={{padding:30}} >
-                <Card style={{width:'19rem', padding:25,height:200,overflow:'hidden',margin:10}}>
-                  <Card.Img src={`data:image/png;base64,${base64String}`} alt="" className='img' />
-                  <Card.Body>
-                    <Card.Text style={{ marginTop: '1rem', color: 'black' }}>{single.name}</Card.Text>
-                    <Card.Text style={{ color: 'black' }} >${single.price}</Card.Text>
-
-                  </Card.Body>
-                  <Button className='button' onClick={()=>{
-                    let id = single._id;
-                    console.log(id);
-                    if( id in cartItems){
-                      const currentItem=cartItems[id];
-                      handleAddToCart({[id]:{name:`${single.name}`,price:`${single.price}`,quantity:currentItem.quantity+1}})
-                  }
-                  else{
-                    handleAddToCart({[id]:{name:`${single.name}`,price:`${single.price}`,quantity:1}})
-                  }
-                  }}
-                  >Add to cart</Button>
-                  </Card>
-              </div>
-            )
-          })
-        }  
-      </div> */}
+       
       </div>
       </div>
 

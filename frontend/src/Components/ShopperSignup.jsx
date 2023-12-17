@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Bag from '../assets/BAG.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Alert } from 'react-bootstrap';
 import '../Components/ShopperSignup1.css';
 import Button from 'react-bootstrap/Button';
 
@@ -19,8 +19,52 @@ function SignUP() {
     }, [])
 
     const collectData = async () => {
-        console.log(name, email, password)
-        let result = await fetch('http://localhost:2000/register', {
+        // console.log(name, email, password)
+        if(email.length==0){
+            alert('Enter email')
+            return
+        }
+        if(!email.includes('@')){
+            alert('Enter valid email')
+            return
+        }
+        if(password.length<5){
+            Alert('Enter atleast five length password')
+            return
+        }
+        let countUpppercase=0;
+        let countlowecase = 0;
+        let specialCharacters = 0;
+
+        for(let i=0;i<password.length;i++){
+            let specialChars = ['!','@','#','$','%','^','&','*','(',')','<','>',',','.','/']
+            if(specialChars.includes(password[i])){
+                specialCharacters++
+            }
+            else{
+                if(password[i]== password[i].toUpperCase()){
+                    countUpppercase++
+                }
+                if(password[i]== password[i].toLowerCase()){
+                    countlowecase++
+                }
+            }
+        }
+
+        if(countUpppercase==0){
+            alert('Invalid Form, 0 upper case characters in password')
+            return
+        }
+        if(countlowecase==0){
+            alert('Invalid Form, 0 lower case characters in password')
+            return
+        }
+        if(specialCharacters==0){
+            alert('Invalid Form, 0 special characters case characters in password')
+            return
+        }
+
+        let result = await fetch('https://shopsy-ikxy.onrender.com/register', {
             method: 'post',
             body: JSON.stringify({ name, email, password }),
             headers: {
